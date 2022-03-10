@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-const { getYear, dataFormat } = require("../helpers/helper_functions.js")
+const { dataFormat } = require("../helpers/helper_functions.js");
 
 router.get("/", (req, res) => {
   axios

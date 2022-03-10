@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-const { getYear, dataFormat } = require("../helpers/helper_functions.js")
+const { dataFormat } = require("../helpers/helper_functions.js");
 
 require("dotenv/config");
 
-/* Receive all funny gifs */
+/* Receive all coding gifs */
 router.get("/", function (req, res, next) {
   axios
     .get(
@@ -16,7 +16,7 @@ router.get("/", function (req, res, next) {
     })
     .catch((err) => {
       console.log(err.message);
-      res.send("Error please try again")
+      res.send("Error please try again");
     });
 });
 
