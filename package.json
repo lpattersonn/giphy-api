@@ -15,5 +15,8 @@
     "morgan": "~1.9.1",
     "nodemon": "^2.0.15"
   },
-  "proxy": "api.giphy.com/v1/gifs/trending"
+  "proxy": "api.giphy.com/v1/gifs/trending",
+  "devDependencies": {
+    "dotenv": "^16.0.0"
+  }
 }
