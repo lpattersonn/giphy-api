@@ -11,12 +11,11 @@ router.get("/", function (req, res, next) {
       `https://api.giphy.com/v1/gifs/search?api_key=${process.env.api_key}&q=funny&limit=10`
     )
     .then((response) => {
-      console.log(response);
-      res.send(response.data.data);
+      res.send(response.data);
     })
     .catch((err) => {
       console.log(err.message);
-      res.send("Error please try again")
+      res.send("Error please")
     });
 });
 
