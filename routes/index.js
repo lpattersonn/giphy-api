@@ -2,20 +2,21 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
-require("dotenv/config")
+require("dotenv/config");
 
-/*  */
+/* Receive all funny gifs */
 router.get("/", function (req, res, next) {
   axios
     .get(
-      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.api_key}&q=spongebob`
+      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.api_key}&q=funny&limit=10`
     )
     .then((response) => {
-      console.log(response.data);
-      res.send(response.data);
+      console.log(response);
+      res.send(response.data.data);
     })
     .catch((err) => {
-      console.log(err);
+      console.log(err.message);
+      res.send("Error please try again")
     });
 });
 
