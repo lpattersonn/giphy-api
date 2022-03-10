@@ -9,7 +9,7 @@ require("dotenv/config");
 router.get("/", function (req, res, next) {
   axios
     .get(
-      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.api_key}&q=coding&limit=10`
+      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.api_key}&q=coding&limit=12`
     )
     .then((response) => {
       res.send(dataFormat(response.data.data));

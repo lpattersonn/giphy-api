@@ -6,7 +6,7 @@ const { dataFormat } = require("../helpers/helper_functions.js");
 router.get("/", (req, res) => {
   axios
     .get(
-      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.api_key}&q=${req.query.search}&limit=5`
+      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.api_key}&q=${req.query.search}&limit=12`
     )
     .then((response) => {
       res.send(dataFormat(response.data.data));

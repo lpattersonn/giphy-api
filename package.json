@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www", 
+    "test": "./node_modules/.bin/mocha"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -17,6 +18,9 @@
   },
   "proxy": "api.giphy.com/v1/gifs/trending",
   "devDependencies": {
-    "dotenv": "^16.0.0"
+    "babel": "^6.23.0",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.0",
+    "mocha": "^9.2.1"
   }
 }
