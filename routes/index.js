@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+const { getYear, dataFormat } = require("../helpers/helper_functions.js")
 
 require("dotenv/config");
 
@@ -11,11 +12,11 @@ router.get("/", function (req, res, next) {
       `https://api.giphy.com/v1/gifs/search?api_key=${process.env.api_key}&q=coding&limit=10`
     )
     .then((response) => {
-      res.send(response.data);
+      res.send(dataFormat(response.data.data));
     })
     .catch((err) => {
       console.log(err.message);
-      res.send("Error please")
+      res.send("Error please try again")
     });
 });
 

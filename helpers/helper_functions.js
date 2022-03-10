@@ -5,4 +5,19 @@ const getYear = function (date) {
   return year;
 };
 
-console.log(getYear("2016-08-04 21:59:22"));
+// Formate data received from api request
+const dataFormat = function (arr) {
+  let dataOutput = {};
+  for (let element of arr) {
+    let year = getYear(element.import_datetime);
+    if (!dataOutput[year]) {
+      dataOutput[year] = [];
+    }
+    if (dataOutput[year]) {
+      dataOutput[year].push(element.images.fixed_width.url);
+    } 
+  }
+  return dataOutput;
+};
+
+module.exports = { getYear, dataFormat };
